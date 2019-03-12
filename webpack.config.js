@@ -15,8 +15,10 @@ module.exports = {
   },
   module: {
   loaders: [
-            { test: /\.jsx?$/, loader: "babel-loader", exclude: /node_modules/ }
-           ]
+      { test: /\.jsx?$/, loader: "babel-loader", exclude: /node_modules/ },
+      { test: /\.css/, loader: 'style-loader!css-loader' },
+      { test: /\.(woff|woff2|eot|ttf)$/, loader: 'url-loader?limit=100000' }
+    ]
   },
   plugins: [HtmlWebpackPluginConfig],
   devtool: 'inline-source-map'
